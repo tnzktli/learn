@@ -1,2 +1,2 @@
 #!/usr/bin/env python
-print "这是master分支的修改"
+我就这样解决了冲突
