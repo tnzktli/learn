@@ -1,2 +1,2 @@
 #!/usr/bin/env python
-print "hello" aaaaa
+print "一顿操作后完成了任务"
