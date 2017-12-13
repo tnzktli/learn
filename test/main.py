@@ -1,2 +1,2 @@
 #!/usr/bin/env python
-print "一顿操作后完成了任务"
+print "这是master分支的修改"
