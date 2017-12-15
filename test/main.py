@@ -1,3 +1,4 @@
 #!/usr/bin/env python
 
-print "dev"
+from flaskLearn.main import varmain
+print varmain
