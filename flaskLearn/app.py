@@ -56,11 +56,8 @@ def show_user():
 #http://127.0.0.1:5000/
 @app.route('/')
 def hello_world():
-    # num = int(request.form['num'])
-    # print(type(num))
-    app.logger.debug('请求成功')
 
-    return 'Hello World!'
+    return 'localhost!'
 
 @app.route('/up',methods = ['POST'])
 def printUP():

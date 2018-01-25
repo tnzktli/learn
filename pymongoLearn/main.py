@@ -10,7 +10,7 @@ from bson.objectid import ObjectId
 client = MongoClient("127.0.0.1",27017)
 db = client.school
 db.authenticate('demo', 'demo1234')
-collection = db.user
+collection = db.blog
 
 # blog1 = {
 #     "author":"Mike",
@@ -48,10 +48,11 @@ collection = db.user
 # print db.collection_names(include_system_collections=False)
 
 # print list(collection.find_one({"author":"Mike"}))
-print(collection.find_one({"name":"demo1"})["_id"])
+print(collection.find_one({"name":"demo1"},["aa"]))
 # print collection.count({"author":"Mike"})
 # cursor = collection.find(condition).sort("create_time",pymongo.DESCENDING).skip(start).limit(end -start)
 # cursor = collection.find({"author":"Mike"})
+# pprint.pprint(list(cursor))
 # l = [10,20]
 # cursor = collection.find({"likes":{"$in":l}})
 # for docu in cursor:
