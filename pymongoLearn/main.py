@@ -10,7 +10,8 @@ from bson.objectid import ObjectId
 client = MongoClient("127.0.0.1",27017)
 db = client.school
 db.authenticate('demo', 'demo1234')
-collection = db.blog
+blog_col = db.blog
+user_col = db.user
 
 # blog1 = {
 #     "author":"Mike",
@@ -48,7 +49,7 @@ collection = db.blog
 # print db.collection_names(include_system_collections=False)
 
 # print list(collection.find_one({"author":"Mike"}))
-print(collection.find_one({"name":"demo1"},["aa"]))
+# print(collection.find_one({"name":"demo1"},["aa"]))
 # print collection.count({"author":"Mike"})
 # cursor = collection.find(condition).sort("create_time",pymongo.DESCENDING).skip(start).limit(end -start)
 # cursor = collection.find({"author":"Mike"})
@@ -64,7 +65,14 @@ print(collection.find_one({"name":"demo1"},["aa"]))
 #
 # collection.create_index([("author",pymongo.ASCENDING),("text",pymongo.DESCENDING)],unique = False)
 
-
+# # find时查询条件为list1(文档的一个字段) in list2,效果为：list1中任何一个元素在list2中，该文档符合查询要求
+print(
+    list(
+        blog_col.find({
+            "tags" : {"$in" : ["python","a","b"]}
+        },["author"])
+    )
+)
 
 
 

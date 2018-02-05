@@ -1,0 +1,3 @@
+[submodule "celeryLearn"]
+	path = celeryLearn
+	url = git@github.com:tnzktli/celeryLearn.git
